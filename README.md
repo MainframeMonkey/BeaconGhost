@@ -11,6 +11,8 @@
 <p align="center">
 <img width="1085" height="694" alt="map" src="https://github.com/user-attachments/assets/eb532c34-9f0c-4d3c-b362-2cc7327b05fd" />
 <img width="864" height="597" alt="Risk" src="https://github.com/user-attachments/assets/b22c5cf4-56cb-442e-a750-4e8628f7781b" />
+<img width="846" height="614" alt="SSID" src="https://github.com/user-attachments/assets/01fcd024-6e7d-45ca-940a-1ae924fa01c1" />
+<img width="747" height="382" alt="zoom" src="https://github.com/user-attachments/assets/815a00cb-d83e-4da3-a110-ebdc343fe40a" />
 </p>
 
 ## What BeaconGhost does
