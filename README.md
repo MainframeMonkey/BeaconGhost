@@ -1,10 +1,7 @@
 <p align="center">
 <img width="1280" height="640" alt="image" src="https://github.com/user-attachments/assets/6d4b6a27-a7f9-4b6c-9e93-e85f4bc5acdb" />
 </p>
-
 <p align="center"><strong>BeaconGhost demonstrates how remembered WiFi networks can expose location traces when correlated with public WiFi geolocation data.</strong></p>
-
-<img width="460" height="460" alt="image" src="https://github.com/user-attachments/assets/01b8d414-2491-46c9-a065-a3248abfdb83" />
 <p align="center">Created by <strong>M@infr@meMonkey</strong></p>
 
 ---
