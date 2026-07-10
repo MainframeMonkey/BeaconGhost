@@ -9,8 +9,8 @@
 ## Screenshots
 
 <p align="center">
-  <img src="docs/screenshots/beaconghost_dashboard_map.png" alt="BeaconGhost dashboard map" width="49%" />
-  <img src="docs/screenshots/beaconghost_dashboard_risk.png" alt="BeaconGhost dashboard risk view" width="49%" />
+<img width="1085" height="694" alt="map" src="https://github.com/user-attachments/assets/eb532c34-9f0c-4d3c-b362-2cc7327b05fd" />
+<img width="864" height="597" alt="Risk" src="https://github.com/user-attachments/assets/b22c5cf4-56cb-442e-a750-4e8628f7781b" />
 </p>
 
 ## What BeaconGhost does
