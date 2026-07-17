@@ -70,6 +70,13 @@ def metric_int(value) -> int:
         return 0
 
 
+def metric_int_between(value, default: int, min_value: int, max_value: int) -> int:
+    parsed = metric_int(value)
+    if parsed <= 0:
+        parsed = default
+    return max(min_value, min(parsed, max_value))
+
+
 def asset_data_uri(path: str | Path) -> str:
     p = Path(path)
     if not p.exists():
@@ -167,6 +174,15 @@ def dashboard_css() -> None:
             border: 1px solid rgba(241, 196, 15, 0.25); color: rgba(255,255,255,0.88);
             margin-bottom: 1rem;
         }
+        iframe[title="streamlit_folium.st_folium"] {
+            min-height: 680px;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+        div[data-testid="stIFrame"] {
+            min-height: 680px;
+            overflow: visible;
+        }
         </style>
         """,
         unsafe_allow_html=True,
@@ -209,7 +225,8 @@ def render_map(results: pd.DataFrame) -> None:
             popup=popup,
             tooltip=f"{row.get('ssid','')} | {row.get('risk_level','')}",
         ).add_to(cluster)
-    st_folium(m, width=None, height=560)
+    map_height = metric_int_between(os.getenv("DASHBOARD_MAP_HEIGHT", "680"), 680, 420, 1200)
+    st_folium(m, height=map_height, returned_objects=[], use_container_width=True)
 
 
 def main() -> None:
