@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import html
 import os
 from pathlib import Path
 
@@ -207,12 +208,19 @@ def render_map(results: pd.DataFrame) -> None:
     cluster = MarkerCluster(name="SSID indicators").add_to(m)
 
     for _, row in df.iterrows():
+        ssid = html.escape(str(row.get("ssid", "")))
+        risk_level = html.escape(str(row.get("risk_level", "")))
+        risk_score = html.escape(str(row.get("risk_score", "")))
+        wigle_total = html.escape(str(row.get("wigle_total", "")))
+        city = html.escape(str(row.get("city", "")))
+        region = html.escape(str(row.get("region", "")))
+        country = html.escape(str(row.get("country", "")))
         popup = folium.Popup(
             html=(
-                f"<b>SSID:</b> {row.get('ssid','')}<br>"
-                f"<b>Risk:</b> {row.get('risk_level','')} ({row.get('risk_score','')})<br>"
-                f"<b>WiGLE total:</b> {row.get('wigle_total','')}<br>"
-                f"<b>Place:</b> {row.get('city','')} {row.get('region','')} {row.get('country','')}<br>"
+                f"<b>SSID:</b> {ssid}<br>"
+                f"<b>Risk:</b> {risk_level} ({risk_score})<br>"
+                f"<b>WiGLE total:</b> {wigle_total}<br>"
+                f"<b>Place:</b> {city} {region} {country}<br>"
                 f"<b>Note:</b> rounded display coordinate"
             ),
             max_width=360,
@@ -223,7 +231,7 @@ def render_map(results: pd.DataFrame) -> None:
             fill=True,
             fill_opacity=0.75,
             popup=popup,
-            tooltip=f"{row.get('ssid','')} | {row.get('risk_level','')}",
+            tooltip=f"{ssid} | {risk_level}",
         ).add_to(cluster)
     map_height = metric_int_between(os.getenv("DASHBOARD_MAP_HEIGHT", "680"), 680, 420, 1200)
     st_folium(m, height=map_height, returned_objects=[], use_container_width=True)

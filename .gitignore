@@ -1,0 +1,16 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+
+# Runtime output (captures, WiGLE results, cache, debug data)
+data/
+
+# OS / editor cruft
+.DS_Store
+*.swp
